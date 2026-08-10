@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const ICONS = {
   drop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/></svg>',
   spark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l4 4M14 14l4 4M18 6l-4 4M10 14l-4 4"/></svg>',
-  wave: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 12c2 0 2-3 4-3s2 3 4 3 2-3 4-3 2 3 4 3 2-3 4-3"/><path d="M2 17c2 0 2-3 4-3s2 3 4 3 2-3 4-3 2 3 4 3 2-3 4-3"/></svg>',
+  wave: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 12c2 0 2-3 4-3s2 3 4 3 2-3 4-3 2 3 4 3 2-3 4-3"/><path d="M2 17c2 0 2-3 4-3s2 3 4 3 2-3 4-3 2 3 4 3"/></svg>',
   leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 4c0 9-7 16-16 16 0-9 7-16 16-16z"/><path d="M4 20c4-4 8-8 16-16"/></svg>',
   snow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v20M4.9 5l14.2 14M19.1 5 4.9 19M2 12h20"/></svg>',
   bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>',
   circleDot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/></svg>',
-  facial: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 4c4 0 7 3 7 7v3c0 3-2 5-3 5s-1-1-2-1-1 1-2 1c-2 0-4-2-4-5"/><path d="M8 10c0-1 .5-1.5 1-1.5M15 10c0-1-.5-1.5-1-1.5"/></svg>',
+  facial: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 4c4 0 7 3 7 7v3c0 3-2 5-3 5s-1-1-2-1-1 1-2 1c-2 0-4-2-4-5"/><path d="M8 10c0-1 .5-1.5 1-1.5M15 10c0-1 .5-1.5 1-1.5"/></svg>',
   syringe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 3l3 3M4 20l4-4M9 15l7-7 2 2-7 7-3 1zM13 5l3 3"/></svg>',
   waves2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="12" r="6" opacity=".6"/><circle cx="12" cy="12" r="10" opacity=".3"/></svg>',
   microneedle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 14l10-10 6 6-10 10H4v-6z"/><path d="M14 4l6 6"/></svg>',
@@ -39,36 +39,37 @@ const ICONS = {
   bubble: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="14" r="6"/><circle cx="17" cy="7" r="2.6"/></svg>',
   shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg>',
   gem: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12l3 5-9 13L3 8l3-5z"/><path d="M3 8h18M9 3l3 5 3-5M9 8l3 13 3-13"/></svg>',
-  team: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.6 1.9-4.7 4-5"/></svg>',
+  team: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>',
   heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></svg>',
 };
 
 /* ---------------------------------------------------------
    DADOS — Métodos / Procedimentos
+   Caminhos atualizados para apontar corretamente às imagens na raiz
 --------------------------------------------------------- */
 const METODOS = [
-  { icon: 'syringe', image: 'imagens/img.botox.jpg', title: 'Botox', desc: 'Suavização de linhas de expressão com toxina botulínica de alta precisão, preservando a naturalidade dos movimentos.' },
-  { icon: 'snow', image: 'imagens/img.criopolise.jpg', title: 'Criolipólise', desc: 'Redução de gordura localizada através do congelamento controlado das células adiposas, sem cirurgia.' },
-  { icon: 'bolt', image: 'imagens/img.corrente%20russa.jpg', title: 'Corrente Russa', desc: 'Estimulação elétrica muscular que tonifica e firma o corpo, aumentando a força e a definição.' },
-  { icon: 'waves2', image: 'imagens/img.header3.png', title: 'Radiofrequência', desc: 'Estímulo térmico profundo que ativa colágeno e elastina, promovendo firmeza e viço à pele.' },
-  { icon: 'spark', image: 'imagens/img.header.jpg', title: 'Bioestimuladores', desc: 'Substâncias injetáveis que reativam a produção natural de colágeno para um rejuvenescimento gradual.' },
-  { icon: 'drop', image: 'imagens/img.header2.jpg', title: 'Preenchimento Facial', desc: 'Ácido hialurônico aplicado com técnica refinada para restaurar volume e harmonizar os contornos.' },
-  { icon: 'circleDot', image: 'imagens/img.header3.png', title: 'Lipo Enzimática', desc: 'Enzimas que atuam na quebra de gordura localizada, remodelando a silhueta de forma gradual.' },
-  { icon: 'facial', image: 'imagens/img.limpeza%20pele.jpg', title: 'Limpeza de Pele', desc: 'Higienização profunda que remove impurezas e revitaliza a textura, devolvendo luminosidade à pele.' },
-  { icon: 'waves2', image: 'imagens/img.header2.jpg', title: 'Drenagem Linfática', desc: 'Massagem terapêutica que estimula a circulação e reduz retenção de líquidos, aliviando o corpo.' },
-  { icon: 'circleDot', image: 'imagens/img.header.jpg', title: 'Ultrassom Estético', desc: 'Ondas ultrassônicas que atuam em camadas profundas, remodelando e firmando os tecidos.' },
-  { icon: 'bubble', image: 'imagens/img.header2.jpg', title: 'Carboxiterapia', desc: 'Aplicação de gás carbônico medicinal que melhora oxigenação, circulação e firmeza da pele.' },
-  { icon: 'microneedle', image: 'imagens/img.microagulhamento.jpg', title: 'Microagulhamento', desc: 'Microlesões controladas que estimulam a regeneração celular e o colágeno, refinando a textura da pele.' },
-  { icon: 'laser', image: 'imagens/img.header3.png', title: 'Laser', desc: 'Tecnologia de precisão para tratamento de manchas, cicatrizes e rejuvenescimento da pele.' },
-  { icon: 'gem', image: 'imagens/img.header2.jpg', title: 'Skinbooster', desc: 'Microinjeções de ácido hialurônico que hidratam profundamente, devolvendo viço e elasticidade.' },
+  { icon: 'syringe', image: 'img.botox.jpg', title: 'Botox', desc: 'Suavização de linhas de expressão com toxina botulínica de alta precisão, preservando a naturalidade dos movimentos.' },
+  { icon: 'snow', image: 'img.criopolise.jpg', title: 'Criolipólise', desc: 'Redução de gordura localizada através do congelamento controlado das células adiposas, sem cirurgia.' },
+  { icon: 'bolt', image: 'img.corrente%20russa.jpg', title: 'Corrente Russa', desc: 'Estimulação elétrica muscular que tonifica e firma o corpo, aumentando a força e a definição.' },
+  { icon: 'waves2', image: 'img.header3.png', title: 'Radiofrequência', desc: 'Estímulo térmico profundo que ativa colágeno e elastina, promovendo firmeza e viço à pele.' },
+  { icon: 'spark', image: 'img.header.jpg', title: 'Bioestimuladores', desc: 'Substâncias injetáveis que reativam a produção natural de colágeno para um rejuvenescimento gradual.' },
+  { icon: 'drop', image: 'img.header2.jpg', title: 'Preenchimento Facial', desc: 'Ácido hialurônico aplicado com técnica refinada para restaurar volume e harmonizar os contornos.' },
+  { icon: 'circleDot', image: 'img.header3.png', title: 'Lipo Enzimática', desc: 'Enzimas que atuam na quebra de gordura localizada, remodelando a silhueta de forma gradual.' },
+  { icon: 'facial', image: 'img.limpeza%20pele.jpg', title: 'Limpeza de Pele', desc: 'Higienização profunda que remove impurezas e revitaliza a textura, devolvendo luminosidade à pele.' },
+  { icon: 'waves2', image: 'img.header2.jpg', title: 'Drenagem Linfática', desc: 'Massagem terapêutica que estimula a circulação e reduz retenção de líquidos, aliviando o corpo.' },
+  { icon: 'circleDot', image: 'img.header.jpg', title: 'Ultrassom Estético', desc: 'Ondas ultrassônicas que atuam em camadas profundas, remodelando e firmando os tecidos.' },
+  { icon: 'bubble', image: 'img.header2.jpg', title: 'Carboxiterapia', desc: 'Aplicação de gás carbônico medicinal que melhora oxigenação, circulação e firmeza da pele.' },
+  { icon: 'microneedle', image: 'img.microagulhamento.jpg', title: 'Microagulhamento', desc: 'Microlesões controladas que estimulam a regeneração celular e o colágeno, refinando a textura.' },
+  { icon: 'laser', image: 'img.header3.png', title: 'Laser', desc: 'Tecnologia de precisão para tratamento de manchas, cicatrizes e rejuvenescimento da pele.' },
+  { icon: 'gem', image: 'img.header2.jpg', title: 'Skinbooster', desc: 'Microinjeções de ácido hialurônico que hidratam profundamente, devolvendo viço e elasticidade.' },
 ];
 
 const RESULTADOS = [
-  { image: 'img/img.harm..webp', title: 'Harmonização Facial', desc: 'Contornos suavizados e simetria natural, respeitando as características únicas de cada rosto.' },
-  { image: 'img/img.red.medidas.webp', title: 'Redução de Medidas', desc: 'Protocolo combinado de criolipólise e drenagem, com resultados visíveis a partir da 3ª sessão.' },
-  { image: 'img/img.rejuv..jpeg', title: 'Rejuvenescimento', desc: 'Bioestimuladores e skinbooster trabalhando juntos para uma pele mais firme e luminosa.' },
-  { image: 'img/img.pr.jpg', title: 'Pele Renovada', desc: 'Microagulhamento associado a laser para textura uniforme e poros refinados.' },
-  { image: 'img/img.c.d.webp', title: 'Corpo Definido', desc: 'Corrente russa e radiofrequência corporal para tonificação e firmeza.' },
+  { image: 'img.harm..webp', title: 'Harmonização Facial', desc: 'Contornos suavizados e simetria natural, respeitando as características únicas de cada rosto.' },
+  { image: 'img.red.medidas.webp', title: 'Redução de Medidas', desc: 'Protocolo combinado de criolipólise e drenagem, com resultados visíveis a partir da 3ª sessão.' },
+  { image: 'img.rejuv..jpeg', title: 'Rejuvenescimento', desc: 'Bioestimuladores e skinbooster trabalhando juntos para uma pele mais firme e luminosa.' },
+  { image: 'img.pr.jpg', title: 'Pele Renovada', desc: 'Microagulhamento associado a laser para textura uniforme e poros refinados.' },
+  { image: 'img.c.d.webp', title: 'Corpo Definido', desc: 'Corrente russa e radiofrequência corporal para tonificação e firmeza.' },
 ];
 
 const TESTIMONIALS = [
@@ -80,14 +81,14 @@ const TESTIMONIALS = [
 ];
 
 const GALERIA = [
-  { image: 'imagens/img.header.jpg', label: 'Recepção', h: 260 },
-  { image: 'imagens/img.header2.jpg', label: 'Sala de Procedimentos', h: 320 },
-  { image: 'imagens/img.header3.png', label: 'Suíte Premium', h: 230 },
-  { image: 'imagens/img.unhas.jpg', label: 'Área de Espera', h: 300 },
-  { image: 'imagens/img.limpeza%20pele.jpg', label: 'Consultório', h: 260 },
-  { image: 'imagens/img.microagulhamento.jpg', label: 'Espaço Wellness', h: 340 },
-  { image: 'imagens/img.botox.jpg', label: 'Detalhes', h: 240 },
-  { image: 'imagens/img.criopolise.jpg', label: 'Ambiente Externo', h: 280 },
+  { image: 'img.header.jpg', label: 'Recepção', h: 260 },
+  { image: 'img.header2.jpg', label: 'Sala de Procedimentos', h: 320 },
+  { image: 'img.header3.png', label: 'Suíte Premium', h: 230 },
+  { image: 'img.unhas.jpg', label: 'Área de Espera', h: 300 },
+  { image: 'img.limpeza%20pele.jpg', label: 'Consultório', h: 260 },
+  { image: 'img.microagulhamento.jpg', label: 'Espaço Wellness', h: 340 },
+  { image: 'img.botox.jpg', label: 'Detalhes', h: 240 },
+  { image: 'img.criopolise.jpg', label: 'Ambiente Externo', h: 280 },
 ];
 
 const DIFERENCIAIS = [
@@ -135,10 +136,10 @@ function initMobileMenu() {
 --------------------------------------------------------- */
 function initHeroSlider() {
   const slidesData = [
-    'imagens/img.header.jpg',
-    'imagens/img.header2.jpg',
-    'imagens/img.microagulhamento.jpg',
-    'imagens/img.botox.jpg'
+    'img.header.jpg',
+    'img.header2.jpg',
+    'img.microagulhamento.jpg',
+    'img.botox.jpg'
   ];
   const slider = document.getElementById('heroSlider');
   const dotsWrap = document.getElementById('heroDots');
